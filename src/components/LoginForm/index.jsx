@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import BaseInput from 'components/UI/BaseInput';
 import BaseButton from 'components/UI/BaseButton';
-import useToken from '../../hooks/useToken';
-import Auth from '../../services/Auth';
+import useToken from 'hooks/useToken';
+import Auth from 'services/Auth';
 import * as Styled from './style';
 
 export default function LoginForm() {
