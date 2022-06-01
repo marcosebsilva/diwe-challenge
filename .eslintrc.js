@@ -20,5 +20,6 @@ module.exports = {
   ],
   rules: {
     'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off',
   },
 };
