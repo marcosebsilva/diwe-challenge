@@ -9,9 +9,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
   }
-
+  
   body {
     font-size: 16px;
+    overflow-y: hidden;
   }
 
   label, input::placeholder {
@@ -21,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     font-size: 2.25rem;
-    color: ${colors['main-header']};
+    color: ${colors['primary-medium']};
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
   }

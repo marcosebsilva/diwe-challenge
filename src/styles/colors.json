@@ -1,6 +1,8 @@
 {
   "primary-dark": "#12295B",
-  "main-header": "#244677",
+  "primary-medium": "#244677",
   "neutral-light": "#F1F3F5",
-  "secondary-header": "#495057"
+  "secondary-header": "#495057",
+  "neutral-dark": "#495057",
+  "focus-dark":  "#4263EB"
 }
