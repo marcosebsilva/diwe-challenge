@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import BaseInput from 'components/UI/BaseInput';
 import BaseButton from 'components/UI/BaseButton';
 import { useNavigate } from 'react-router-dom';
@@ -9,10 +9,16 @@ import * as Styled from './style';
 export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [, setToken] = useToken();
+  const [token, setToken] = useToken();
   const [showErrorMsg, setShowErrorMsg] = useState(false);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (token) {
+      navigate('dashboard');
+    }
+  }, []);
 
   const handleChange = useCallback((event) => {
     switch (event.target.name) {
@@ -47,6 +53,7 @@ export default function LoginForm() {
       </Styled.TitleWrapper>
       <Styled.Form>
         <BaseInput
+          autoComplete="email"
           value={email}
           handleChange={handleChange}
           placeholder="Digite seu email"
@@ -54,6 +61,7 @@ export default function LoginForm() {
           name="email"
         />
         <BaseInput
+          autoComplete="current-password"
           value={password}
           type="password"
           handleChange={handleChange}

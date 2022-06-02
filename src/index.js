@@ -2,20 +2,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import GlobalStyle from './styles/globalStyle';
 import App from './App';
 import { TokenProvider } from './hooks/useToken';
 import reportWebVitals from './reportWebVitals';
 
+const queryClient = new QueryClient();
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <GlobalStyle />
-    <TokenProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </TokenProvider>
+    <QueryClientProvider client={queryClient}>
+      <TokenProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </TokenProvider>
+    </QueryClientProvider>
   </React.StrictMode>,
 );
 
