@@ -56,3 +56,16 @@ Cypress.Commands.add('checkSort', (key) => {
       .should('have.text', contacts.at(-1)[key]);
   });
 });
+
+Cypress.Commands.add('fillAddContactForm', ({ invalidName, invalidPhone, invalidEmail } = {}) => {
+  cy.get('[data-testid="add-contact-phone-input"]')
+    .type(invalidPhone ? 'e' : '99999999');
+
+  if (!invalidName) {
+    cy.get('[data-testid="add-contact-name-input"]')
+      .type('Marcos Silva');
+  }
+
+  cy.get('[data-testid="add-contact-email-input"]')
+    .type(invalidEmail ? 'invalid email' : 'validemail@gmail.com');
+});
