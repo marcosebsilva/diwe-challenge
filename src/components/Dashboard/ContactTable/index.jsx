@@ -78,7 +78,7 @@ export default function ContactTable({ contacts, refetch }) {
       timeoutRef.current = setTimeout(() => setShowErrorMsg(false), THREE_SECONDS);
     }
 
-    return () => clearTimeout(timeoutRef);
+    return () => clearTimeout(timeoutRef.current);
   }, [isSuccess, isError]);
 
   return (
@@ -87,7 +87,7 @@ export default function ContactTable({ contacts, refetch }) {
       <Styled.TitleAndButtonWrapper>
         <h1>Listagem de produtos</h1>
         <button
-          data-testid="add-contact-action"
+          data-testid="go-to-add-contact"
           type="button"
           onClick={handleAdd}
         >

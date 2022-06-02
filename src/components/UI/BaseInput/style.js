@@ -19,5 +19,6 @@ export const Input = styled.input`
   &::placeholder {
     opacity: 0.64;
     font-weight: 500;
+    font-size: 1rem;
   }
 `;

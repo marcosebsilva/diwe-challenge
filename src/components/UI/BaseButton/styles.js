@@ -9,6 +9,7 @@ export const Button = styled.button`
   background-color: ${colors['primary-dark']};
   font-size: 1rem;
   transition: 100ms;
+  width: 100%;
 
   &:hover{
     filter: brightness(130%);

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import * as Styled from './style';
 
 export default function BaseInput({
-  label, autoComplete, handleChange, placeholder, value, name, type = 'text',
+  label, testid, required, autoComplete, handleChange, placeholder, value, maxlength, name, type = 'text',
 }) {
   const id = useMemo(() => `${name}-input`, [name]);
   return (
@@ -12,7 +12,9 @@ export default function BaseInput({
         {label}
       </Styled.Label>
       <Styled.Input
-        data-testid={id}
+        required={required}
+        data-testid={testid || id}
+        maxLength={maxlength}
         type={type}
         id={id}
         autoComplete={autoComplete}
@@ -26,10 +28,23 @@ export default function BaseInput({
 }
 
 BaseInput.propTypes = {
-  label: PropTypes.string,
-  handleChange: PropTypes.func,
+  autoComplete: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  required: PropTypes.bool,
+  handleChange: PropTypes.func.isRequired,
   type: PropTypes.string,
   placeholder: PropTypes.string,
-  value: PropTypes.string,
-  name: PropTypes.string,
-}.required;
+  value: PropTypes.string.isRequired,
+  maxlength: PropTypes.number,
+  name: PropTypes.string.isRequired,
+  testid: PropTypes.string,
+};
+
+BaseInput.defaultProps = {
+  required: false,
+  maxlength: 524288,
+  placeholder: '',
+  autoComplete: '',
+  type: 'text',
+  testid: false,
+};

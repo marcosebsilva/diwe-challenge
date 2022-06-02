@@ -65,6 +65,7 @@ export const Wrapper = styled.div`
   height: 100%;
   border-radius: 8px;
   position: relative;
+  min-width: 100%;
   overflow-y: auto;
   padding: 40px 37px 43px;
   background-color: white;
@@ -102,14 +103,6 @@ export const ArrowDown = styled.div`
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-top: 6px solid ${colors['primary-medium']};
-`;
-
-export const ArrowUp = styled.div`
-  width: 0; 
-  height: 0; 
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: 5px solid black;
 `;
 
 export const OptionsWrapper = styled.div`
