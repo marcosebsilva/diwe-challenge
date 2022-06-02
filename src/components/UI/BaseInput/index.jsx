@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import * as Styled from './style';
 
 export default function BaseInput({
-  label, handleChange, placeholder, value, name, type = 'text',
+  label, autoComplete, handleChange, placeholder, value, name, type = 'text',
 }) {
   const id = useMemo(() => `${name}-input`, [name]);
   return (
@@ -15,6 +15,7 @@ export default function BaseInput({
         data-testid={id}
         type={type}
         id={id}
+        autoComplete={autoComplete}
         name={name}
         onChange={handleChange}
         placeholder={placeholder}
