@@ -12,21 +12,23 @@ export default function Dashboard() {
   const [token] = useToken();
   const {
     data, isError, refetch, isLoading,
-  } = useQuery('allContacts', () => Contacts.getAll(token));
+  } = useQuery('allContacts', () => Contacts.getAll(token), { retry: 1 });
 
   const navigate = useNavigate();
 
   useEffect(() => {
+    const ONE_SECOND = 1000;
     if (isError) {
-      navigate('/');
+      setTimeout(() => {
+        navigate('/');
+      }, ONE_SECOND);
     }
   }, [isError]);
 
   const renderComponent = () => {
     if (isLoading) return <Loading />;
-
-    if (isError) return <h1>Redirecionando...</h1>;
-
+    if (isError) return <p>Redirecionando...</p>;
+    data.data.sort((a, b) => a.id - b.id);
     return <ContactTable contacts={data.data} refetch={refetch} />;
   };
 

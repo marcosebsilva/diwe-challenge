@@ -10,6 +10,7 @@ export async function getAll(token) {
       Authorization: `Bearer ${token}`,
     },
   });
+
   return response;
 }
 

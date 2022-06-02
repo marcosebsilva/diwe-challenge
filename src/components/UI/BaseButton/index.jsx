@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as Styled from './styles';
 
-export default function BaseButton({ children, handleClick }) {
+export default function BaseButton({ children, handleClick, testid }) {
   return (
     <Styled.Button
+      data-testid={testid}
       onClick={handleClick}
-      data-testid="login-button"
     >
       { children }
     </Styled.Button>
@@ -16,4 +16,5 @@ export default function BaseButton({ children, handleClick }) {
 BaseButton.propTypes = {
   children: PropTypes.node,
   handleClick: PropTypes.func,
+  testid: PropTypes.string,
 }.isRequired;

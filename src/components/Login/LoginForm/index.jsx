@@ -72,13 +72,13 @@ export default function LoginForm() {
         />
       </Styled.Form>
       {showErrorMsg && (
-        <Styled.ErrorMsg data-testid="login-error-msg">
+        <Styled.ErrorMsg data-testid="login-error-message">
           Credenciais inválidas.
         </Styled.ErrorMsg>
       )}
       <BaseButton
+        testid="login-action"
         handleClick={handleLogin}
-        data-testid="login-button"
       >
         Fazer login
       </BaseButton>

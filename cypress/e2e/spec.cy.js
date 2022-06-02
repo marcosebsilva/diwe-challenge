@@ -11,7 +11,7 @@ afterEach(() => {
   server.shutdown();
 });
 
-describe.skip('1.When entering login page.', () => {
+describe('1.When entering login page.', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000');
   });
