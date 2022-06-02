@@ -5,13 +5,6 @@ const authInstance = axios.create({
 });
 
 export async function login(body) {
-  try {
-    const response = await authInstance.post('/login', body);
-    return response.data;
-  } catch (error) {
-    if (error.response.status === 400) {
-      throw new Error(error.message);
-    }
-    throw new Error('Unexpected request error.');
-  }
+  const response = await authInstance.post('/login', body);
+  return response.data;
 }
