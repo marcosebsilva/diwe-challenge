@@ -22,3 +22,12 @@ export async function remove({ token, id }) {
   });
   return response;
 }
+
+export async function register({ token, contact }) {
+  const response = await contactsInstance.post('/', contact, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return response;
+}

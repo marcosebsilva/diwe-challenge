@@ -24,7 +24,7 @@ export default function Dashboard() {
       }, ONE_SECOND);
     }
 
-    return () => clearTimeout(timeoutRef);
+    return () => clearTimeout(timeoutRef.current);
   }, [isError]);
 
   const renderComponent = () => {

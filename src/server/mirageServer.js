@@ -41,6 +41,26 @@ export function makeServer({ environment = 'development' } = {}) {
         }
         return new Response(401);
       });
+      this.post('/contacts', (schema, request) => {
+        const body = JSON.parse(request.requestBody);
+        const { Authorization } = request.requestHeaders;
+        const validUser = schema.auths.first();
+
+        if (Authorization.replace('Bearer', '').trim() !== validUser.token) {
+          return new Response(401);
+        }
+
+        const bodyKeys = Object.keys(body).sort();
+        const expectedKeys = ['email', 'mobile', 'name'];
+        const bodyHasAllKeys = bodyKeys.every((key, index) => key === expectedKeys[index]);
+
+        if (!bodyHasAllKeys) {
+          return new Response(400);
+        }
+
+        schema.contacts.create(body);
+        return new Response(201);
+      });
       this.delete('/contacts/:id', (schema, request) => {
         const { Authorization } = request.requestHeaders;
         const validUser = schema.auths.first();
