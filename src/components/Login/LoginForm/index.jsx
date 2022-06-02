@@ -47,6 +47,7 @@ export default function LoginForm() {
 
   return (
     <Styled.Wrapper>
+      <h1>{token}</h1>
       <Styled.TitleWrapper>
         <h1>Bem-vindo!</h1>
         <h2>Faça login para acessar nossa plataforma</h2>

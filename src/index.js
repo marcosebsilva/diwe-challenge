@@ -8,6 +8,12 @@ import App from './App';
 import { TokenProvider } from './hooks/useToken';
 import reportWebVitals from './reportWebVitals';
 
+import { makeServer } from './server/mirageServer';
+
+if (process.env.NODE_ENV === 'development') {
+  makeServer({ environment: 'development' });
+}
+
 const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
