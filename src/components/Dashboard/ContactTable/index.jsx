@@ -75,7 +75,7 @@ export default function ContactTable({ contacts, refetch }) {
     if (isError) {
       setShowErrorMsg(true);
       const THREE_SECONDS = 3000;
-      setTimeout(() => setShowErrorMsg(false), THREE_SECONDS);
+      timeoutRef.current = setTimeout(() => setShowErrorMsg(false), THREE_SECONDS);
     }
 
     return () => clearTimeout(timeoutRef);
