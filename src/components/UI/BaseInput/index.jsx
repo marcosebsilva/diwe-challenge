@@ -42,9 +42,10 @@ BaseInput.propTypes = {
 
 BaseInput.defaultProps = {
   required: false,
+  // this number is the actual default
   maxlength: 524288,
   placeholder: '',
   autoComplete: '',
   type: 'text',
-  testid: false,
+  testid: '',
 };

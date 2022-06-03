@@ -11,7 +11,7 @@ import { TokenProvider } from './hooks/useToken';
 import reportWebVitals from './reportWebVitals';
 import { makeServer } from './server/mirageServer';
 
-// testing config
+// testing and development config
 if (window.Cypress) {
   // eslint-disable-next-line no-new
   new Server({
@@ -26,11 +26,11 @@ if (window.Cypress) {
       });
     },
   });
-} else {
+} else if (process.env.NODE_ENV === 'development') {
   makeServer();
 }
 
-const queryClient = new QueryClient();
+export const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
