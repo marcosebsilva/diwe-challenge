@@ -59,6 +59,7 @@ export default function ContactTableItem({ contact }) {
   const renderDefaultButtons = () => (
     <>
       <button
+        data-testid="edit-user"
         type="button"
         onClick={() => toggleEditMode(contact.id)}
         onKeyDown={() => toggleEditMode(contact.id)}
@@ -88,6 +89,7 @@ export default function ContactTableItem({ contact }) {
   const renderEditModeButtons = () => (
     <>
       <button
+        data-testid="confirm-edit-user"
         type="button"
         onClick={() => handleEdit(contact.id)}
         onKeyDown={() => handleEdit(contact.id)}
@@ -95,6 +97,7 @@ export default function ContactTableItem({ contact }) {
         Confirmar
       </button>
       <button
+        data-testid="cancel-edit-user"
         type="button"
         onClick={() => toggleEditMode()}
         onKeyDown={() => toggleEditMode()}
@@ -139,6 +142,7 @@ export default function ContactTableItem({ contact }) {
       <td data-testid="table-item-email">
         { isContactBeingEdited ? (
           <input
+            data-testid="edit-email-input"
             name="email"
             onChange={handleChange}
             value={newEmail}
@@ -155,7 +159,7 @@ export default function ContactTableItem({ contact }) {
 
 ContactTableItem.propTypes = {
   contact: PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     name: PropTypes.string,
     mobile: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     email: PropTypes.string,
