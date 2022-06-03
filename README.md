@@ -7,6 +7,8 @@ Desafio técnico feito para o processo seletivo da DIWE.
 
 Você pode ver o deploy do projeto clicando [aqui.](https://diwe-marcos.netlify.app)
 
+Detalhes sobre as funcionalidades podem ser vistos na página do [desafio.](https://github.com/diwe-engineering/diwe-challenge-frontend-junior)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6ad84fa7-f383-4750-ab1e-d8593b86581e/deploy-status)](https://app.netlify.com/sites/diwe-marcos/deploys)
 
 
