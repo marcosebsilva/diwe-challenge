@@ -7,33 +7,21 @@ export const Table = styled.table`
   width: 100%;
   position: relative;
   border-collapse: collapse;
-  th {
-    text-align: left;
-    &:hover {
-      filter: brightness(150%);
-    }
-    div {
-      pointer-events: none;
-      color: ${colors['primary-medium']};
-      font-family: 'Poppins';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 1.25rem;
-      line-height: 120%;
-      display: flex;
-      gap: 9px;
-      align-items: center;
-    }
-  }
   
   tr, td, th {
-    max-height: 64px;
-    padding-inline: 30px;
+    height: 64px;
+    padding-inline: 0 30px;
+    max-width: 200px;
+
   }
 
-  /* headers */
-  
-  /* every even, including headers */
+  td:first-child,
+  th:first-child {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-left:20px;
+  }
+
   tbody {
     td:first-child {
       color: ${colors['neutral-dark']};
@@ -44,21 +32,30 @@ export const Table = styled.table`
   }
   
   thead {
+    th {
+      text-align: left;
+      &:hover {
+        filter: brightness(150%);
+      }
+      div {
+        pointer-events: none;
+        color: ${colors['primary-medium']};
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.25rem;
+        line-height: 120%;
+        display: flex;
+        gap: 9px;
+        align-items: center;
+      }
+    }
     tr {
       font-weight: 500;
       color: ${colors['neutral-dark']};
       border-bottom: 2px solid rgba(173, 181, 189, 0.64);
     }
   }
-
-
-  td:first-child,
-  th:first-child {
-  padding-top:20px;
-  padding-bottom:20px;
-  padding-left:20px;
-}
-
 `;
 
 export const Wrapper = styled.div`
@@ -96,7 +93,7 @@ export const TitleAndButtonWrapper = styled.div`
   }
 `;
 
-// Both arrows came from https://css-tricks.com/snippets/css/css-triangle/
+// arrow came from https://css-tricks.com/snippets/css/css-triangle/
 export const ArrowDown = styled.div`
   width: 0; 
   height: 0; 
@@ -124,10 +121,4 @@ export const OptionsWrapper = styled.div`
       max-width: 18px;
     }
   }
-`;
-
-export const ErrorMsg = styled.span`
-  position: absolute;
-  top: 15px;
-  color: red;
 `;
