@@ -31,3 +31,13 @@ export async function register({ token, contact }) {
   });
   return response;
 }
+
+export async function edit({ token, contact }) {
+  const { id, ...body } = contact;
+  const response = await contactsInstance.put(`/${contact.id}`, body, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return response;
+}
