@@ -149,7 +149,7 @@ yarn run build
 ```
 
 ### Melhorias e aprendizados.
-Um tempo finalizado de ter finalizado o projeto, parei pra organizar a documentação e encontrei alguns problemas relativamente importantes e que eventualmente vão ser corrigidos e que me serviram como aprendizados:
+Um tempo depois de ter finalizado o projeto, parei pra organizar a documentação e encontrei alguns problemas relativamente importantes e que eventualmente vão ser corrigidos e que me serviram como aprendizados:
 - **1)** a funcionalidade dos hooks ficou um pouco imprevisível e sucetível a falhas por falta de uma lógica que garante o tipo dos inputs e outputs. Isso também poderia ser facilmente resolvido se o desenvolvimento fosse feito com **TypeScript** ou alguns testes unitarios.
 - **2)** um dos hooks, o **useEditMode** partiu de uma idéia legal que poderia facilmente ter sido implementada de forma mais fácil usando modais.
 - **3)** um dos pontos fortes do React são as bibliotecas disponibilizadas pela comunidade. Faz sentido não querer depender de várias bibliotecas diferentes por questões de compatibilidade, por exemplo. Apesar disso, algo que não tinha me atentado era: o quanto o uso daquela biblioteca é importante na minha aplicação? Isso me fez decidir por não implementar algumas libs simples que seriam extremamente úteis e não resultariam no problema descrito, como o **[react-modal](https://www.npmjs.com/package/react-modal)**.
