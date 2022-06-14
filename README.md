@@ -6,10 +6,18 @@ Listagem de contatos feita para o desafio técnico do processo seletivo da DIWE.
 
 #### A aplicação em funcionamento pode ser vista [clicando aqui.](https://diwe-marcos.netlify.app);
 ```json
-Login
+API Real
 {
   "email": "user@diwe.com.br",
-  "password": "password"
+  "password": "Mob20we23##"
+}
+```
+
+```json
+API Mirage
+{
+  "email": "valid.email@gmail.com",
+  "password": "valid.password"
 }
 ```
 ##### O layout da aplicação foi baseado nesse arquivo do [Figma.](https://www.figma.com/file/MlDF7BP1BgodRv0BO4EQ4C/Desafio)
